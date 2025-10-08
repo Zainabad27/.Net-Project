@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FieldValidatorAPI
 {
-     class CommonRegularExpressionValidationPatterns
+    public class CommonRegularExpressionValidationPatterns
     {
         // Email address validation
         public const string Email_Address_RegEx_Pattern =

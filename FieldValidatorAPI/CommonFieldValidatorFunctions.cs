@@ -17,16 +17,15 @@ namespace FieldValidatorAPI {
 
     public class CommonFieldValidatorFunctions
     {
-        private FieldValidatorDel _requiredFieldValidDelegate=null;
-        private StringLengthValidDel _stringLengthValidDelegate = null;
-        private DateValidDel _dateValidDelegate = null;
-        private PatternValidDel _patternMatchDelegate = null;
-        private CompareTwoFields _compareFieldsValidDelegate = null;
-        private FieldValidatorDel IsFieldEmptyDelegate = null;
+        private static FieldValidatorDel _requiredFieldValidDelegate=null;
+        private static StringLengthValidDel _stringLengthValidDelegate = null;
+        private static DateValidDel _dateValidDelegate = null;
+        private static PatternValidDel _patternMatchDelegate = null;
+        private static CompareTwoFields _compareFieldsValidDelegate = null;
 
 
 
-        public FieldValidatorDel RequiredFieldValidDelegate
+        public static FieldValidatorDel RequiredFieldValidDelegate
         {
             get {
                 if (_requiredFieldValidDelegate == null)
@@ -36,8 +35,9 @@ namespace FieldValidatorAPI {
                     return _requiredFieldValidDelegate;
 
             }
+
         }
-        public StringLengthValidDel StringLengthValidDelegate
+        public static StringLengthValidDel StringLengthValidDelegate
         {
             get {
                 if (_stringLengthValidDelegate == null)
@@ -48,7 +48,7 @@ namespace FieldValidatorAPI {
 
             }
         }
-        public DateValidDel DateValidDelegate
+        public static DateValidDel DateValidDelegate
         {
             get {
                 if (_dateValidDelegate == null)
@@ -59,7 +59,7 @@ namespace FieldValidatorAPI {
 
             }
         }
-        public PatternValidDel FieldPatternValidDelegate
+        public static PatternValidDel FieldPatternValidDelegate
         {
             get {
                 if (_patternMatchDelegate == null)
@@ -70,7 +70,7 @@ namespace FieldValidatorAPI {
 
             }
         }
-        public CompareTwoFields CompareFieldsValidDelegate
+        public static CompareTwoFields CompareFieldsValidDelegate
         {
             get {
                 if (_compareFieldsValidDelegate == null)
@@ -80,22 +80,6 @@ namespace FieldValidatorAPI {
                     return _compareFieldsValidDelegate;
 
             }
-        }
-        public FieldValidatorDel FieldEmptyDelegate
-        {
-            get {
-                if (IsFieldEmptyDelegate == null)
-                {
-                    IsFieldEmptyDelegate = IsFieldEmpty;
-                }
-                    return IsFieldEmptyDelegate;
-
-            }
-        }
-
-        private static bool IsFieldEmpty(string field) {
-            if (string.IsNullOrEmpty(field)) {  return false; }
-            return true;
         }
 
         private static bool RequiredFieldValid(string FieldValue) {

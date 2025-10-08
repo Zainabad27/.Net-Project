@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace zainProject.FieldValidators
 {
 
-    public delegate bool FieldValidatorDel(int FieldIndex,string FieldValue, string[] FieldArray,out string FieldInvalidMsg);
+    public delegate bool FieldValidatorDelegateInterface(int FieldIndex,string FieldValue, string[] FieldArray,out string FieldInvalidMsg);
     public interface IFieldValidator
     {
         void InitializesValidatorDelegates();
 
-        string[] FieldArray { get;  }
+        public string[] FieldArray { get; }
 
-        FieldValidatorDel ValidatorDel { get; }
+        FieldValidatorDelegateInterface ValidatorDel { get; }
     }
 }
