@@ -13,9 +13,22 @@ namespace zainProject.Data
 {
     public class RegisterUser : IRegister
     {
-        public bool EmailExists(string Email)
+        public bool EmailExists(string UserEmail)
         {
-            throw new NotImplementedException();
+            using (var DbContext = new ClubMemberShipDbContext() ){ 
+            return (DbContext.UserModel.Any(user => user.Email.ToLower().Trim() == UserEmail.ToLower().Trim()));
+            //if ((user==null))
+            //{
+            //    return false;   
+
+            //}
+
+            //return true;
+            
+            
+        }  
+
+
         }
 
        public  bool registerUser(string[] Fields)

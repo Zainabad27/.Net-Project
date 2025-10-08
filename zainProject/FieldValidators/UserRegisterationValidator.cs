@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zainProject.Data;
 
 namespace zainProject.FieldValidators
 {
     public class UserRegisterationValidator:IFieldValidator
     {
+        private IRegister _register=null;
+       public UserRegisterationValidator(IRegister Register) {
+            _register=Register;
+
+        
+        }
 
         const int FirstName_Min_Length = 2;
         const int FirstName_Max_Length = 100;
@@ -26,7 +33,7 @@ namespace zainProject.FieldValidators
         private PatternValidDel _patternMatchDelegate = null;
         private CompareTwoFields _compareFieldsValidDelegate = null;
 
-        EmailExistsDel _emailExists = null;
+        EmailExistsDel _emailExistsDel = null;
 
         private string[] _fieldArray = null;
         string[] FieldArray {
@@ -42,15 +49,16 @@ namespace zainProject.FieldValidators
         
         }
 
-        //string[] IFieldValidator.FieldArray => FieldArray;
+        string[] IFieldValidator.FieldArray => FieldArray;
 
         public FieldValidatorDelegateInterface ValidatorDel => _fieldValidatorDel;
 
         public void InitializesValidatorDelegates()
-
-
         {
+
             _fieldValidatorDel = ValidField;
+
+            _emailExistsDel = _register.EmailExists;
 
             _requiredFieldValidDelegate = CommonFieldValidatorFunctions.RequiredFieldValidDelegate;
             _stringLengthValidDelegate = CommonFieldValidatorFunctions.StringLengthValidDelegate;
@@ -75,7 +83,8 @@ namespace zainProject.FieldValidators
                     FieldInvalidMsg = (_requiredFieldValidDelegate(FieldValue)) ? $"Email cannot Be Empty" : "";
                     if (FieldInvalidMsg != "") break;
                     FieldInvalidMsg = (_patternMatchDelegate(FieldValue, CommonRegularExpressionValidationPatterns.Email_Address_RegEx_Pattern)) ? $"" : "Invalid Email Pattern, Please Writedown the correct Email.";
-
+                    if (FieldInvalidMsg != "") break;
+                    FieldInvalidMsg = (_emailExistsDel(FieldValue)) ? "Email Already In use Please Enter a different Email." : "";
                     break;
                 case FieldConstants.UserRegisterationFields.FirstName:
                     FieldInvalidMsg = (_requiredFieldValidDelegate(FieldValue)) ? $"FirstName cannot Be Empty" : "";
@@ -145,5 +154,6 @@ namespace zainProject.FieldValidators
 
 
         }
+       
     }
 }
