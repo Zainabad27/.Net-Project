@@ -15,7 +15,7 @@ namespace zainProject
     }
      static class CommonOutputFormat
     {
-        static void ChangeConsoleTheme(FontTheme Theme) {
+        public static void ChangeConsoleTheme(FontTheme Theme) {
 
             if (Theme == FontTheme.Normal)
             {

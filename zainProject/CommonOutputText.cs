@@ -31,7 +31,7 @@ namespace zainProject
         }
 
 
-         static void WriteMainHeading()
+         public static void WriteMainHeading()
         {
             Console.Clear();
             Console.WriteLine(MainHeading);
@@ -39,7 +39,7 @@ namespace zainProject
             Console.WriteLine();
 
         }
-         static void WriteRegisterHeading()
+         public static void WriteRegisterHeading()
         {
             Console.Clear();
             Console.WriteLine(RegisterHeading);
@@ -47,7 +47,7 @@ namespace zainProject
             Console.WriteLine();
 
         }
-         static void WriteLoginHeading()
+         public static void WriteLoginHeading()
         {
             Console.Clear();
             Console.WriteLine(LoginHeading);

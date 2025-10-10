@@ -17,6 +17,10 @@ namespace zainProject.Data
         {
             using (var DbContext = new ClubMemberShipDbContext() ){ 
             return (DbContext.UserModel.Any(user => user.Email.ToLower().Trim() == UserEmail.ToLower().Trim()));
+           
+                
+                
+                
             //if ((user==null))
             //{
             //    return false;   
@@ -31,7 +35,7 @@ namespace zainProject.Data
 
         }
 
-       public  bool registerUser(string[] Fields)
+       public bool registerUser(string[] Fields)
         {
             using (var DbContext = new ClubMemberShipDbContext()) {
                 User AddingUser = new User
