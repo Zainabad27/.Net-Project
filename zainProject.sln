@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zainProject", "zainProject\zainProject.csproj", "{4D40E8F3-C328-4FB9-B804-8685E805A56A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cycling-Project", "zainProject\Cycling-Project.csproj", "{4D40E8F3-C328-4FB9-B804-8685E805A56A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldValidatorAPI", "FieldValidatorAPI\FieldValidatorAPI.csproj", "{7ECBF626-17DF-4938-93AA-6BE634434777}"
 EndProject
