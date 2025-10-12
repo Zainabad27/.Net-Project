@@ -28,7 +28,7 @@ namespace zainProject.views
             _fieldValidator.FieldArray[(int)FieldConstants.UserRegisterationFields.FirstName] = GetUserInput(FieldConstants.UserRegisterationFields.FirstName, "Please Enter Your FirstName.");
             _fieldValidator.FieldArray[(int)FieldConstants.UserRegisterationFields.LastName] = GetUserInput(FieldConstants.UserRegisterationFields.LastName, "Please Enter Your LastName.");
             _fieldValidator.FieldArray[(int)FieldConstants.UserRegisterationFields.Password] = GetUserInput(FieldConstants.UserRegisterationFields.Password, "Please Enter Your Password.");
-            _fieldValidator.FieldArray[(int)FieldConstants.UserRegisterationFields.PasswordCompare] = GetUserInput(FieldConstants.UserRegisterationFields.PasswordCompare, "Please Enter Your Password Again.");
+            _fieldValidator.FieldArray[(int)FieldConstants.UserRegisterationFields.PasswordCompare] = GetUserInput(FieldConstants.UserRegisterationFields.PasswordCompare, "Please Confirm Your Password.");
             _fieldValidator.FieldArray[(int)FieldConstants.UserRegisterationFields.DOB] = GetUserInput(FieldConstants.UserRegisterationFields.DOB, "Please Enter Your Date Of Birth.");
             _fieldValidator.FieldArray[(int)FieldConstants.UserRegisterationFields.PhoneNumber] = GetUserInput(FieldConstants.UserRegisterationFields.PhoneNumber, "Please Enter Your PhoneNumber.");
             _fieldValidator.FieldArray[(int)FieldConstants.UserRegisterationFields.AddressFirstLine] = GetUserInput(FieldConstants.UserRegisterationFields.AddressFirstLine, "Please Enter Your AddressFirstLine.");
@@ -58,6 +58,10 @@ namespace zainProject.views
             do {
                 Console.WriteLine(promptText);
                 fieldVal = Console.ReadLine();
+                //if (fieldVal == null||fieldVal=="")
+                //{
+                //    return "Invalid Input";
+                //}
 
             }while(!(ValidField(field,fieldVal))) ;
 
@@ -70,7 +74,7 @@ namespace zainProject.views
 
            bool IsValid= _fieldValidator.ValidatorDel((int)fieldnum, fieldVal, _fieldValidator.FieldArray, out string InvalidMSG);
 
-            if (IsValid)
+            if (!IsValid)
             {
                 CommonOutputFormat.ChangeConsoleTheme(FontTheme.Danger);
                 Console.WriteLine(InvalidMSG);

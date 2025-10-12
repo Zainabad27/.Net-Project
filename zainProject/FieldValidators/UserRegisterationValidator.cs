@@ -111,7 +111,7 @@ namespace zainProject.FieldValidators
                     FieldInvalidMsg = (_requiredFieldValidDelegate(FieldValue)) ? $"Confirm-Password cannot Be Empty" : "";
                     if (FieldInvalidMsg != "") break;
 
-                    FieldInvalidMsg = (_compareFieldsValidDelegate(FieldValue, FieldArray[(int)FieldConstants.UserRegisterationFields.PasswordCompare])) ? $"" : "Password Does not Match the previos one.";
+                    FieldInvalidMsg = (_compareFieldsValidDelegate(FieldValue, FieldArray[(int)FieldConstants.UserRegisterationFields.Password])) ? $"" : "Password Does not Match the previos one.";
 
                     break;
                 case FieldConstants.UserRegisterationFields.DOB:
@@ -125,7 +125,7 @@ namespace zainProject.FieldValidators
                     FieldInvalidMsg = (_requiredFieldValidDelegate(FieldValue)) ? $"Phone Number cannot Be Empty" : "";
                     if (FieldInvalidMsg != "") break;
 
-                    FieldInvalidMsg = (_patternMatchDelegate(FieldValue,CommonRegularExpressionValidationPatterns.Uk_PhoneNumber_RegEx_Pattern)) ? $"" : "Invalid Phone Number, Please Enter a valid Phone Number.";
+                    FieldInvalidMsg = (_patternMatchDelegate(FieldValue,CommonRegularExpressionValidationPatterns.Pk_PhoneNumber_RegEx_Pattern)) ? $"" : "Invalid Phone Number, Please Enter a valid Phone Number.";
 
                     break;
                 case FieldConstants.UserRegisterationFields.AddressFirstLine:

@@ -13,8 +13,8 @@ namespace FieldValidatorAPI
             @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$";
 
         // UK phone number (accepts +44 or 0 followed by 9–10 digits)
-        public const string Uk_PhoneNumber_RegEx_Pattern =
-            @"^(?:\+44|0)\s?\d{9,10}$";
+        public const string Pk_PhoneNumber_RegEx_Pattern =
+            "^[1-9][0-9]{4}$";
 
         // UK postcode (standard official pattern)
         public const string Uk_Post_Code_RegEx_Pattern =

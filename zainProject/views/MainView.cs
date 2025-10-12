@@ -11,12 +11,12 @@ namespace zainProject.views
     public class MainView : IView
     {
         public IFieldValidator FieldValidator => null;
-        IView _register = null;
-        IView _login = null;
+        IView _registerView = null;
+        IView _loginView = null;
 
 
         public MainView(IView r, IView l) { 
-            _register=r; _login=l;  
+            _registerView=r; _loginView = l;  
         
         }
 
@@ -29,17 +29,18 @@ namespace zainProject.views
 
             if (key==ConsoleKey.R) {
                 CommonOutputText.WriteRegisterHeading();
-                _register.runView();
-                _login.runView();
+                _registerView.runView();
+                _loginView.runView();
             }
             else if (key == ConsoleKey.L) { 
                 
                 CommonOutputText.WriteLoginHeading();
-                _login.runView();
+                _loginView.runView();
             }
             else
             {
                 Console.Clear();
+                //Console.ReadKey();
 
             }
         }
