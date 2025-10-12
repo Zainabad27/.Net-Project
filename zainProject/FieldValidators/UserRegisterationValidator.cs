@@ -142,7 +142,7 @@ namespace zainProject.FieldValidators
                     break;
                 case FieldConstants.UserRegisterationFields.PostalCode:
                     FieldInvalidMsg = (_requiredFieldValidDelegate(FieldValue)) ? $"Address-City cannot Be Empty" : "";
-                    FieldInvalidMsg = (_patternMatchDelegate(FieldValue, CommonRegularExpressionValidationPatterns.Uk_Post_Code_RegEx_Pattern)) ? $"" : "Invalid Postal code, Please Enter a valid Postal Code.";
+                    FieldInvalidMsg = (_patternMatchDelegate(FieldValue, CommonRegularExpressionValidationPatterns.Pk_Post_Code_RegEx_Pattern)) ? $"" : "Invalid Postal code, Please Enter a valid Postal Code.";
 
                     break;
 

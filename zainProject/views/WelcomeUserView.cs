@@ -21,7 +21,7 @@ namespace zainProject.views
         public void runView()
         {
             CommonOutputFormat.ChangeConsoleTheme(FontTheme.success);
-            Console.WriteLine($"Welcome ${_user.FirstName} to the Cycling Club.");
+            Console.WriteLine($"Welcome {_user.FirstName} to the Cycling Club Application.");
             CommonOutputFormat.ChangeConsoleTheme(FontTheme.Normal);
             Console.ReadLine();
         }

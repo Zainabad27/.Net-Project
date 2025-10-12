@@ -32,6 +32,7 @@ namespace zainProject.views
             if (Email == null || Password == null)
             {
                 Console.WriteLine("Invalid input.");
+                Console.ReadKey();
                 return;
 
             }

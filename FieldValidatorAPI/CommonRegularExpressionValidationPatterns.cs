@@ -14,11 +14,10 @@ namespace FieldValidatorAPI
 
         // UK phone number (accepts +44 or 0 followed by 9–10 digits)
         public const string Pk_PhoneNumber_RegEx_Pattern =
-            "^[1-9][0-9]{4}$";
+           "^(?:\\+92|0092|0)3[0-9]{2}[- ]?[0-9]{7}$";
 
         // UK postcode (standard official pattern)
-        public const string Uk_Post_Code_RegEx_Pattern =
-            @"^(GIR\s?0AA|[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2})$";
+        public const string Pk_Post_Code_RegEx_Pattern = @"^[1-9][0-9]{4}$";
 
         // Strong password: min 8 chars, 1 uppercase, 1 lowercase, 1 digit, 1 special char
         public const string Strong_Password_RegEx_Pattern =

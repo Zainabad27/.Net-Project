@@ -30,6 +30,9 @@ namespace zainProject.views
             if (key==ConsoleKey.R) {
                 CommonOutputText.WriteRegisterHeading();
                 _registerView.runView();
+                Console.Clear();
+                CommonOutputText.WriteLoginHeading();
+
                 _loginView.runView();
             }
             else if (key == ConsoleKey.L) { 
